@@ -72,6 +72,10 @@ p {
     background-color: @theme-primary;
 }
 
+.bg-light {
+    background-color: @gray-lighter;
+}
+
 .bg-dark {
     background-color: @gray-darker;
     color: white;
@@ -96,8 +100,8 @@ aside {
 // Navigation
 
 .navbar-default {
-    background-color: white;
-    border-color: fade(@gray-darker, 5%);
+    background-color: black;
+    border-color: fade(@gray-darker, 5%);   
     .sans-serif-font;
     .transition-all;
     .navbar-header .navbar-brand {
@@ -113,9 +117,13 @@ aside {
     .navbar-header .navbar-toggle {
         font-weight: 700;
         font-size: 12px;
-        color: @gray-darker;
+        color: @gray-lighter;
+
         text-transform: uppercase;
+       
     }
+
+
     .nav {
         > li {
             > a,
@@ -152,25 +160,25 @@ aside {
         }
         .nav > li > a,
         .nav > li > a:focus {
-            color: fade(white, 70%);
+            color: fade(white, 80%);            
             &:hover {
                 color: white;
             }
         }
         &.affix {
-            background-color: white;
+            background-color: black;
             border-color: fade(@gray-darker, 5%);
             .navbar-header .navbar-brand {
                 color: @theme-primary;
                 font-size: 14px;
                 &:hover,
                 &:focus {
-                    color: darken(@theme-primary, 10%);
+                    color: darken(@theme-primary, 30%);
                 }
             }
             .nav > li > a,
-            .nav > li > a:focus {
-                color: @gray-darker;
+            .nav > li > a:focus {                
+                color: lighten(@theme-primary, 50%);
                 &:hover {
                     color: @theme-primary;
                 }
@@ -182,12 +190,14 @@ aside {
 // Homepage Header
 
 header {
-    position: relative;
+    position: relative;    
     width: 100%;
     min-height: auto;
     .background-cover;
     background-position: center;
-    background-image: url('../img/header.jpg');
+    background-image: url('../img/header.jpg');    
+    //height: 200px;       
+    background-color: rgb(34,34,34);      
     text-align: center;
     color: white;
     .header-content {
@@ -383,10 +393,19 @@ body {
 }
 
 footer{
-    background-color: @gray-darker;
-    color: white;
+    background-color: black;
+    color: @gray-lighter;
     padding: 10px;
 }
 
 //contact form
 #success_message{ display: none;}
+
+
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+    background-color: @gray-dark;
+}
+
+.navbar-default .nav > li > a {
+    color: @gray-lighter;
+}

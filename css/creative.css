@@ -1,6 +1,6 @@
 /*!
  * Start Bootstrap - Creative v3.3.7+1 (http://startbootstrap.com/template-overviews/creative)
- * Copyright 2013-2017 Start Bootstrap
+ * Copyright 2013-2018 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
 /*.table-striped>tbody>tr:nth-of-type(odd) {
@@ -99,6 +99,10 @@ aside {
 .no-padding {
   padding: 0;
 }
+#navbar-collapse-1 > div {
+  text-align: center;
+  margin-bottom: 110px;
+}
 .navbar-default {
   background-color: black;
   border-color: rgba(34, 34, 34, 0.05);
@@ -144,6 +148,14 @@ aside {
 .navbar-default .nav > li.active > a:hover,
 .navbar-default .nav > li.active > a:focus:hover {
   background-color: transparent;
+}
+@media (max-width: 768px) {
+  .navbar-default .navbar-brand {
+    display: none;
+  }
+  .navbar-default #navbar-collapse-1 > div {
+    margin-bottom: 10px;
+  }
 }
 @media (min-width: 768px) {
   .navbar-default {

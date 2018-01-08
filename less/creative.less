@@ -99,6 +99,13 @@ aside {
 
 // Navigation
 
+#navbar-collapse-1{
+    > div{
+         text-align: center;
+         margin-bottom:110px   
+    }
+}
+
 .navbar-default {
     background-color: black;
     border-color: fade(@gray-darker, 5%);   
@@ -147,6 +154,19 @@ aside {
                 }
             }
         }
+    }
+
+    @media (max-width: 768px){
+        .navbar-brand{
+            display: none;
+        }
+
+        #navbar-collapse-1{
+            > div{               
+                margin-bottom:10px   
+            }
+        }
+
     }
     @media (min-width: 768px) {
         background-color: transparent;

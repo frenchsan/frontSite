@@ -97,7 +97,25 @@ aside {
     padding: 0;
 }
 
+
+// header
+.logo{
+    height: 160px;
+    background-color: black;
+}
+
 // Navigation
+
+.navbar{
+    margin-bottom: 0px;
+    border-radius: 0px;
+}
+
+.affix {
+    top: 0;
+    width: 100%;
+    z-index: 9999 !important;
+}
 
 #navbar-collapse-1{
     > div{
@@ -108,7 +126,7 @@ aside {
 
 .navbar-default {
     background-color: black;
-    border-color: fade(@gray-darker, 5%);   
+    border-color: black;   
     .sans-serif-font;
     .transition-all;
     .navbar-header .navbar-brand {
@@ -172,7 +190,7 @@ aside {
     }
     @media (min-width: 768px) {
         background-color: transparent;
-        border-color: fade(white, 30%);
+        border-bottom-color: fade(white, 30%);
         .navbar-header .navbar-brand {
             color: fade(white, 70%);
             &:hover,
@@ -187,7 +205,11 @@ aside {
                 color: white;
             }
         }
+        &.affix-top{
+            background-color: black;
+        }
         &.affix {
+
             background-color: black;
             border-color: fade(@gray-darker, 5%);
             .navbar-header .navbar-brand {
@@ -199,7 +221,8 @@ aside {
                 }
             }
             .nav > li > a,
-            .nav > li > a:focus {                
+            .nav > li > a:focus {   
+                font-size: 16px;             
                 color: lighten(@theme-primary, 50%);
                 &:hover {
                     color: @theme-primary;
@@ -251,9 +274,9 @@ header {
         .header-content {
             position: absolute;
             top: 50%;
-            -webkit-transform: translateY(-50%);
-            -ms-transform: translateY(-50%);
-            transform: translateY(-50%);
+            -webkit-transform: translateY(-90%);
+            -ms-transform: translateY(-90%);
+            transform: translateY(-90%);
             padding: 0 50px;
             .header-content-inner {
                 max-width: 1000px;

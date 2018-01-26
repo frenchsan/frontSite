@@ -7,6 +7,7 @@ var rename = require("gulp-rename");
 var uglify = require('gulp-uglify');
 var pkg = require('./package.json');
 var del = require('del'); // rm -rf
+var purify = require('gulp-purifycss');
 
 // refers to my build directory and or files to
 // to delete
@@ -69,6 +70,12 @@ gulp.task('minify-js', function() {
         }))
 });
 
+// gulp.task('purifycss', function() {
+//     return gulp.src('dist/bootstrap.min.css')
+//         .pipe(purify(['**/*.js', '**/*.html']))
+//         .pipe(gulp.dest('dist'));
+// });
+
 gulp.task('copy', function() {
     return new Promise(function(resolve, reject) {
         gulp.src('node_modules/bootstrap/dist/**/*', '!**/npm.js', '!**/bootstrap-theme.*', '!**/*.map')
@@ -113,7 +120,7 @@ gulp.task('browserSync', function() {
 })
 
 // Dev task with browserSync
-gulp.task('dev', gulp.series('less', 'minify-css', 'minify-js', 'browserSync'), function() {
+gulp.task('dev', gulp.series('clean', 'less', 'minify-css', 'minify-js', 'copy', 'browserSync'), function() {
     gulp.watch('less/*.less', ['less']);
     gulp.watch('css/*.css', ['minify-css']);
     gulp.watch('js/*.js', ['minify-js']);

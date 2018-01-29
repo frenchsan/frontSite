@@ -8,6 +8,7 @@ var uglify = require('gulp-uglify');
 var pkg = require('./package.json');
 var del = require('del'); // rm -rf
 var purify = require('gulp-purifycss');
+var watch = require('gulp-watch');
 
 // refers to my build directory and or files to
 // to delete
@@ -84,9 +85,6 @@ gulp.task('copy', function() {
         gulp.src(['node_modules/jquery/dist/jquery.js', 'node_modules/jquery/dist/jquery.min.js'])
             .pipe(gulp.dest('dist/jquery'));
 
-        gulp.src(['node_modules/magnific-popup/dist/*'])
-            .pipe(gulp.dest('dist/magnific-popup'))
-
         gulp.src(['node_modules/scrollreveal/dist/*.js'])
             .pipe(gulp.dest('dist/scrollreveal'))
 
@@ -125,6 +123,6 @@ gulp.task('dev', gulp.series('clean', 'less', 'minify-css', 'minify-js', 'copy',
     gulp.watch('css/*.css', ['minify-css']);
     gulp.watch('js/*.js', ['minify-js']);
     // Reloads the browser whenever HTML or JS files change
-    gulp.watch('*.html', browserSync.reload);
+    gulp.watch('index.html', browserSync.reload);
     gulp.watch('js/**/*.js', browserSync.reload);
 });

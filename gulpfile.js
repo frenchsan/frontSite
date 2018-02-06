@@ -9,6 +9,7 @@ var pkg = require('./package.json');
 var del = require('del'); // rm -rf
 var purify = require('gulp-purifycss');
 var watch = require('gulp-watch');
+const imagemin = require('gulp-imagemin');
 
 // refers to my build directory and or files to
 // to delete
@@ -60,12 +61,18 @@ gulp.task('minify-css', () => {
         }))
 });
 
+gulp.task('minify-img', () =>
+gulp.src('img/*')
+    .pipe(imagemin())
+    .pipe(gulp.dest('dist/img'))
+);
+
 // Minify JS
 gulp.task('minify-js', function() {
     return gulp.src('js/bureau401.js')
         .pipe(uglify())
         .pipe(rename({ suffix: '.min' }))
-        .pipe(gulp.dest('js'))
+        .pipe(gulp.dest('dist/js'))
         .pipe(browserSync.reload({
             stream: true
         }))
@@ -106,7 +113,7 @@ gulp.task('copy', function() {
 
 // Run everything
 gulp.task('default',
-    gulp.series('clean', 'less', 'minify-css', 'minify-js', 'copy'));
+    gulp.series('clean', 'less', 'minify-css', 'minify-js','minify-img', 'copy'));
 
 // Configure the browserSync task
 gulp.task('browserSync', function() {
@@ -118,7 +125,7 @@ gulp.task('browserSync', function() {
 })
 
 // Dev task with browserSync
-gulp.task('dev', gulp.series('clean', 'less', 'minify-css', 'minify-js', 'copy', 'browserSync'), function() {
+gulp.task('dev', gulp.series('clean', 'less', 'minify-css', 'minify-js','minify-img', 'copy', 'browserSync'), function() {
     gulp.watch('less/*.less', ['less']);
     gulp.watch('css/*.css', ['minify-css']);
     gulp.watch('js/*.js', ['minify-js']);

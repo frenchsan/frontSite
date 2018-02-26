@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
 
@@ -12,19 +12,13 @@
     <title>Escape Game - Bureau 401</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom Fonts -->
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
-
-    <!-- Plugin CSS -->
-    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+    <link href="dist/bootstrap.min.css" rel="stylesheet">
 
     <!-- Theme CSS -->
-    <link href="css/creative.css" rel="stylesheet">
+    <link href="dist/bureau401.min.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="dist/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -34,50 +28,46 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+
+    <style>
+        .affix+.container-fluid {
+            padding-top: 70px;
+        }
+    </style>
+
 </head>
 
 <body id="page-top">
 
-    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid logo">
+        <div>
+            <a class="navbar-brand" href="#"><img src="./img/401_sans_fond_small.png" alt=""></a>
+        </div>
+    </div>
+
+    <nav id="mainNav" class="navbar navbar-default" data-spy="affix" data-offset-top="160">
         <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
+
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Bureau 401</a>
+
             </div>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
+
             <div class="collapse navbar-collapse" id="navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav">
                     <li>
-                        <a class="page-scroll" href="#jeu">Jeu</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#services">Reserver</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#portfolio">Horaires  /Tarifs</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#faq">FAQ</a>
-                    </li>
+                        <a class="page-scroll" href="index.html">Retour accueil</a>
+                    </li>                    
                 </ul>
             </div>
-            <!-- /.navbar-collapse -->
         </div>
-        <!-- /.container-fluid -->
     </nav>
 
 
-
-
-
-    <section>
+    <section  class="bg-primary">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 ">
@@ -305,31 +295,24 @@
                 </div>
             </div>
         </div>
-
-
-    </section>
-
-
+   
 
     <footer class="text-center">
-
         <div class="footer-above">
             <div class="container">
                 <div class="row">
                     <div class="footer-col col-md-4">
-                        <h3>Location</h3>
-                        <p><img src="./img/logo.png" class="img-responsive center-block" width="50%" alt=""></p>
-                        <p>Fort Lachaux
-                            <br>Grand-Charmont, 25200</p>
-
+                      
+                        <p><img src="img/401_fond_noir(3).png" class="img-responsive center-block" width="70%" alt=""></p>
+                        <p>Fort Lachaux<br>Grand-Charmont, 25200</p>
                     </div>
                     <div class="footer-col col-md-4">
                         <h3>Suivez nous</h3>
                         <ul class="list-inline">
                             <li>
-                                <a href="#" class="btn-social btn-outline"><span class="sr-only">Facebook</span><i class="fa fa-fw fa-facebook fa-2x"></i></a>
+                                <a href="https://www.facebook.com/bureau401/" class="btn-social btn-outline"><span class="sr-only">Facebook</span><i class="fa fa-fw fa-facebook fa-2x"></i></a>
                             </li>
-                            <li>
+                            <!-- <li>
                                 <a href="#" class="btn-social btn-outline"><span class="sr-only">Google Plus</span><i class="fa fa-fw fa-google-plus fa-2x"></i></a>
                             </li>
                             <li>
@@ -340,77 +323,41 @@
                             </li>
                             <li>
                                 <a href="#" class="btn-social btn-outline"><span class="sr-only">Dribble</span><i class="fa fa-fw fa-dribbble fa-2x"></i></a>
-                            </li>
+                            </li> -->
                         </ul>
                     </div>
                     <div class="footer-col col-md-4">
-                        <h3>Menu</h3>
-                        <p> Le jeu <a href="http://startbootstrap.com">bipbip</a>.</p>
+                        <h3>Nous contacter</h3>                        
+                        <!-- <p>Tél: 06.xx.xx.xx.xx</p> -->
+                        <p> Email: contact@bureau401.fr</p>                        
+                        <p> Adresse: Esplanade du fort lachaux, 25200 Grand-Charmont</p>
                     </div>
+                </div>
+                <div class="row">
+                    <p>
+                        Copyright © 2018 - Mentions Légales - Conditions Générales de Ventes
+                    </p>
                 </div>
             </div>
         </div>
-
     </footer>
 
-
-
-    <!-- jQuery -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-    <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
-    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
-
-    <!-- Theme JavaScript -->
-    <script src="js/creative.min.js"></script>
-
-    <!--Google Maps-->
-    <script src="https://maps.google.com/maps/api/js"></script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
     <script>
-        function init_map() {
-            var var_location = new google.maps.LatLng(47.5200238, 6.8275971);
-
-            var var_mapoptions = {
-                center: var_location,
-                zoom: 28
-            };
-
-            var var_marker = new google.maps.Marker({
-                position: var_location,
-                map: var_map,
-                title: "New York"
-            });
-
-            var var_map = new google.maps.Map(document.getElementById("map-container"),
-                var_mapoptions);
-
-            var_marker.setMap(var_map);
-
-        }
-
-        google.maps.event.addDomListener(window, 'load', init_map);
-    </script>
-
-    <script>
-        var email = document.getElementById("mail");
-        email.addEventListener("keyup", function(event) {
-            if (email.validity.typeMismatch) {
-                email.setCustomValidity("Un effort pour un email valide :) ");
-            } else {
-                email.setCustomValidity("");
+        WebFont.load({
+            google: {
+                families: ['Playfair Display', 'Libre Baskerville', 'Special Elite']
             }
         });
     </script>
 
 
-
-
+    <script src="dist/jquery/jquery.min.js"></script>
+    <script src="dist/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="dist/scrollreveal/scrollreveal.min.js"></script>
+    <script src="dist/js/bureau401.min.js"></script>  
+    
 </body>
 
 </html>

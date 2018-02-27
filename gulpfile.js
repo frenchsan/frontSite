@@ -14,7 +14,7 @@ const imagemin = require('gulp-imagemin');
 // refers to my build directory and or files to
 // to delete
 var toDelete = [
-    'dist',
+    'dist', 'css'
 ]
 
 // deletes files
@@ -35,10 +35,10 @@ gulp.task('clean', function() {
 gulp.task('less', function() {
 
     return new Promise(function(resolve, reject) {
-        gulp.src('less/bureau401.less')
+        gulp.src('less/bootstrap/bootstrap.less')
             .pipe(less())
             .pipe(gulp.dest('css'));
-        gulp.src('less/bootstrap/bootstrap.less')
+        gulp.src('less/bureau401.less')
             .pipe(less())
             .pipe(gulp.dest('css'))
             .pipe(browserSync.reload({
@@ -62,7 +62,7 @@ gulp.task('minify-css', () => {
 });
 
 gulp.task('minify-img', () =>
-gulp.src('img/*')
+    gulp.src('img/*')
     .pipe(imagemin())
     .pipe(gulp.dest('dist/img'))
 );
@@ -86,8 +86,8 @@ gulp.task('minify-js', function() {
 
 gulp.task('copy', function() {
     return new Promise(function(resolve, reject) {
-        gulp.src('node_modules/bootstrap/dist/**/*', '!**/npm.js', '!**/bootstrap-theme.*', '!**/*.map')
-            .pipe(gulp.dest('dist/bootstrap'));
+        gulp.src('node_modules/bootstrap/dist/js/bootstrap.min.js')
+            .pipe(gulp.dest('dist/bootstrap/js'));
 
         gulp.src(['node_modules/jquery/dist/jquery.js', 'node_modules/jquery/dist/jquery.min.js'])
             .pipe(gulp.dest('dist/jquery'));
@@ -113,7 +113,7 @@ gulp.task('copy', function() {
 
 // Run everything
 gulp.task('default',
-    gulp.series('clean', 'less', 'minify-css', 'minify-js','copy'));
+    gulp.series('clean', 'less', 'minify-css', 'minify-js', 'copy'));
 
 // Configure the browserSync task
 gulp.task('browserSync', function() {
@@ -125,7 +125,7 @@ gulp.task('browserSync', function() {
 })
 
 // Dev task with browserSync
-gulp.task('dev', gulp.series('clean', 'less', 'minify-css', 'minify-js','minify-img', 'copy', 'browserSync'), function() {
+gulp.task('dev', gulp.series('clean', 'less', 'minify-css', 'minify-js', 'minify-img', 'copy', 'browserSync'), function() {
     gulp.watch('less/*.less', ['less']);
     gulp.watch('css/*.css', ['minify-css']);
     gulp.watch('js/*.js', ['minify-js']);

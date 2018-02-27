@@ -17,6 +17,12 @@
   left: 50%;
   position: absolute;
 }
+.panel-body {
+  color: #222222;
+}
+cite {
+  color: red;
+}
 html,
 body {
   height: 100%;

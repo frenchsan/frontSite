@@ -5425,9 +5425,8 @@ button.list-group-item-danger.active:focus {
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
 }
-.c {
+.panel-body {
   padding: 15px;
-  color: #222222;
 }
 .panel-heading {
   padding: 10px 15px;
@@ -6452,8 +6451,8 @@ button.close {
 .navbar-collapse:after,
 .pager:before,
 .pager:after,
-.c:before,
-.c:after,
+.panel-body:before,
+.panel-body:after,
 .modal-header:before,
 .modal-header:after,
 .modal-footer:before,
@@ -6474,7 +6473,7 @@ button.close {
 .navbar-header:after,
 .navbar-collapse:after,
 .pager:after,
-.c:after,
+.panel-body:after,
 .modal-header:after,
 .modal-footer:after {
   clear: both;

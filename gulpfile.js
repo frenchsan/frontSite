@@ -56,9 +56,7 @@ gulp.task('minify-css', () => {
             suffix: '.min'
         }))
         .pipe(gulp.dest('dist'))
-        .pipe(browserSync.reload({
-            stream: true
-        }))
+       
 });
 
 gulp.task('minify-img', () =>
@@ -73,9 +71,7 @@ gulp.task('minify-js', function() {
         .pipe(uglify())
         .pipe(rename({ suffix: '.min' }))
         .pipe(gulp.dest('dist/js'))
-        .pipe(browserSync.reload({
-            stream: true
-        }))
+      
 });
 
 // gulp.task('purifycss', function() {
@@ -113,7 +109,7 @@ gulp.task('copy', function() {
 
 // Run everything
 gulp.task('default',
-    gulp.series('clean', 'less', 'minify-css', 'minify-js', 'copy'));
+    gulp.series('clean', 'less','copy', 'minify-css', 'minify-js' ));
 
 // Configure the browserSync task
 gulp.task('browserSync', function() {

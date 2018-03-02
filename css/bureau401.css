@@ -1,6 +1,9 @@
 /*.table-striped>tbody>tr:nth-of-type(odd) {
     background-color: @theme-primary;
 }*/
+cite > a {
+  color: #777777;
+}
 .text-muted {
   color: #e89b0c;
 }

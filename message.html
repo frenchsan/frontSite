@@ -17,7 +17,12 @@
             'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
             })(window,document,'script','dataLayer','GTM-PRRFN9F');</script>
             <!-- End Google Tag Manager -->
-
+            <style>
+                .hidemail {
+                    font-size: 150%;
+                    color: red;
+                }
+                </style>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -85,7 +90,6 @@
         </div>
     </nav>
 
-
     <section class="bg-primary" id="jeu">
         <div class="container">
             <div class="row">
@@ -96,15 +100,24 @@
                         Les réservations ne sont pas disponibles pour le moment.
                     </p>
                     <p>
-                        Nous vous invitons à suivre notre actualité sur <a style="color:white;text-decoration: underline;" href="https://www.facebook.com/bureau401/"> Facebook.</a> A bientôt !
-                    </p>                     
-                                         
+                        Veuillez saisir votre email, si vous souhaitez etre contacté lorsque les réservations seront ouverte.
+                    </p>                    
+                    <div class="input-group" id="groupmail">
+                        <span class="input-group-addon" id="basic-addon1">@</span>
+                        <input type="text" id="email" class="form-control" placeholder="email" aria-describedby="basic-addon1">
+                    </div>
+                    <hr>                   
+                    <div id="btnValidation" class="page-scroll btn btn-default btn-xl sr-button">Valider</div>
+                    <hr>
+                    <p class="text-faded">Les email seront exclusivement utilisés pour vous contacter. Les données ne seront pas utilisés pour autre chose , ni cèdé à des tiers</p>
+                
                 </div>
             </div>
            
         </div>
     </section>
-   
+
+     
 
     <footer class="text-center">
         <div class="footer-above">
@@ -161,11 +174,42 @@
     </script>
 
 
+
     <script src="dist/jquery/jquery.min.js"></script>
     <script src="dist/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
     <script src="dist/scrollreveal/scrollreveal.min.js"></script>
     <script src="dist/js/bureau401.min.js"></script>  
+    <script>
+       
+       
+     
+        $("#btnValidation" ).click(function() {      
+      addData();
+      $("#groupmail").removeClass("input-group");
+      $("#groupmail").addClass("hidemail");
+    });
+        function addData(){
+         $.ajax({    
+                 type: "POST",
+                 url: "http://api.bureau401.fr/api/launch/subscription",                  
+                 data : " _format=json&request= {\"email\":\"" + $('#email').val() + "\"}",                 
+                 contentType: "application/x-www-form-urlencoded; charset=utf-8",
+                 crossDomain: true,
+                 dataType: 'json',
+                 success: function (data, status, jqXHR) {
+    
+                     //console.log("c'est ok");
+                 },    
+                 error: function (jqXHR, status) {
+                     
+                     // error handler
+                                   
+                    //alert('fail' + status.code);
+                 }
+              });
+        }
+    </script>
     
 </body>
 

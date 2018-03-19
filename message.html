@@ -19,8 +19,13 @@
             <!-- End Google Tag Manager -->
             <style>
                 .hidemail {
-                    font-size: 150%;
-                    color: red;
+                    display:none
+                }               
+                .mailshow{
+                    display:block
+                }
+                .mailhide{
+                    display:none
                 }
                 </style>
     <meta charset="utf-8">
@@ -100,16 +105,19 @@
                         Les réservations ne sont pas disponibles pour le moment.
                     </p>
                     <p>
-                        Veuillez saisir votre email, si vous souhaitez etre contacté lorsque les réservations seront ouverte.
+                        Veuillez saisir votre email, si vous souhaitez être contactés lorsque les réservations seront ouvertes.
                     </p>                    
                     <div class="input-group" id="groupmail">
                         <span class="input-group-addon" id="basic-addon1">@</span>
                         <input type="text" id="email" class="form-control" placeholder="email" aria-describedby="basic-addon1">
                     </div>
-                    <hr>                   
+                    <hr> 
+                    <p class="mailhide" id="msgmail">
+                       Votre adresse mail à bien été enregistrée. A bientôt !
+                    </p>                       
                     <div id="btnValidation" class="page-scroll btn btn-default btn-xl sr-button">Valider</div>
                     <hr>
-                    <p class="text-faded">Les email seront exclusivement utilisés pour vous contacter. Les données ne seront pas utilisés pour autre chose , ni cèdé à des tiers</p>
+                    <p class="text-faded">Les emails seront exclusivement utilisés pour vous contacter. Les données ne seront pas utilisées à d'autres fins, ni cédées à des tiers</p>
                 
                 </div>
             </div>
@@ -188,6 +196,12 @@
       addData();
       $("#groupmail").removeClass("input-group");
       $("#groupmail").addClass("hidemail");
+      $("#msgmail").addClass("mailshow");
+      $("#msgmail").removeClass("mailhide");
+      $("#btnValidation").removeClass("page-scroll btn btn-default btn-xl sr-button");
+      $("#btnValidation").addClass("hidemail");
+      
+      btnValidation
     });
         function addData(){
          $.ajax({    
@@ -199,13 +213,11 @@
                  dataType: 'json',
                  success: function (data, status, jqXHR) {
     
-                     //console.log("c'est ok");
+                    
                  },    
                  error: function (jqXHR, status) {
                      
-                     // error handler
-                                   
-                    //alert('fail' + status.code);
+                    
                  }
               });
         }

@@ -3,39 +3,56 @@
 
 <head>
     <!-- Global Site Tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114937181-1"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114937181-1"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
 
-    gtag('config', 'UA-114937181-1');
-</script>
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-114937181-1');
+    </script>
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-PRRFN9F');</script>
-        <!-- End Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-PRRFN9F');
+    </script>
+    <!-- End Google Tag Manager -->
 
-    <!-- Balisage JSON-LD généré par l'outil d'aide au balisage de données structurées de Google --> 
-    <script type="application/ld+json"> 
-        { "@context" : "http://schema.org",
-         "@type" : "Organization",
-         "url": "http://www.bureau401.fr",
-         "logo": "http://bureau401.fr/website/img/401_Fond_Noir.png",
-         "name": "Bureau 401", 
-          "image" : [ "http://bureau401.fr/img/401_sans_fond_small.png",
-           "http://bureau401.fr/img/fortlachaux.png",
-            "http://bureau401.fr/img/site_sortie_dt.jpg",
-             "http://bureau401.fr/img/entree_tunnel.jpg",
-              "http://bureau401.fr/img/bout_tunnel.jpg",
-               "http://bureau401.fr/img/entree.jpg" ] } 
-            </script>
+    <!-- Balisage JSON-LD généré par l'outil d'aide au balisage de données structurées de Google -->
+    <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "Organization",
+            "url": "http://www.bureau401.fr",
+            "logo": "http://bureau401.fr/website/img/401_Fond_Noir.png",
+            "name": "Bureau 401",
+            "image": ["http://bureau401.fr/img/401_sans_fond_small.png",
+                "http://bureau401.fr/img/fortlachaux.png",
+                "http://bureau401.fr/img/site_sortie_dt.jpg",
+                "http://bureau401.fr/img/entree_tunnel.jpg",
+                "http://bureau401.fr/img/bout_tunnel.jpg",
+                "http://bureau401.fr/img/entree.jpg"
+            ]
+        }
+    </script>
 
-            
-            
+
+
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -73,7 +90,7 @@
 
 <body id="page-top">
     <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRRFN9F"
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRRFN9F"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
@@ -106,7 +123,7 @@
                         <a class="page-scroll" href="#fort">Le Fort Lachaux</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="message.html">RESERVATION</a>
+                        <a class="page-scroll" href="http://dev.bureau401.fr/front-resa/#/reservation/">RESERVATION</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#tarifs">Tarifs</a>
@@ -145,8 +162,8 @@
                     <h2 class="section-heading">Le Jeu</h2>
                     <hr class="light">
                     <p class="text-faded">L'escape game (ou jeu d'évasion grandeur nature) est un nouveau concept d'aventure réelle et interactive accessible à tous.</p>
-                    <p class="text-faded"> Vous et votre équipe serez conduits dans une salle thématisée où vous aurez un temps limité pour résoudre les énigmes, compléter les puzzles et trouver les combinaisons afin de progresser dans l'histoire et mener à bien votre mission. Il ne faudra pas trainer,
-                        le gardien du fort effectue une ronde toutes les heures.
+                    <p class="text-faded"> Vous et votre équipe serez conduits dans une salle thématisée où vous aurez un temps limité pour résoudre les énigmes, compléter les puzzles et trouver les combinaisons afin de progresser dans l'histoire et mener à bien votre mission.
+                        Il ne faudra pas trainer, le gardien du fort effectue une ronde toutes les heures.
                     </p>
                     <p>
                         L'escape game "Les disparus du Fort Lachaux", créé par l'équipe Bureau 401, vous attend avec vos amis, famille et collègues de travail
@@ -263,7 +280,8 @@
                             </div>
                             <hr>
                             <div class="row">
-                                <h3>Embarquez pour une extraordinaire aventure, qui vous mènera jusqu’aux ruines du Fort Lachaux. Suivez les traces de Papy Louis, résolvez les énigmes, passez les embûches et découvrez la réalité des "Disparus du Fort Lachaux" !
+                                <h3>Embarquez pour une extraordinaire aventure, qui vous mènera jusqu’aux ruines du Fort Lachaux. Suivez les traces de Papy Louis, résolvez les énigmes, passez les embûches et découvrez la réalité des "Disparus du Fort Lachaux"
+                                    !
                                 </h3>
                             </div>
                         </div>
@@ -274,7 +292,7 @@
 
         <div class="container text-center">
             <div class="call-to-action">
-                <a href="message.html" class="btn btn-primary btn-xl page-scroll sr-button">Réserver une aventure</a>
+                <a href="http://dev.bureau401.fr/front-resa/#/reservation/" class="btn btn-primary btn-xl page-scroll sr-button">Réserver une aventure</a>
             </div>
         </div>
 
@@ -322,7 +340,7 @@
                     <p>Enfants (jusqu'a 12 ans) : gratuit</p>
                     <p>Limité à 2 enfants par séance.</p>
 
-                    <a href="message.html" class="page-scroll btn btn-default btn-xl sr-button">Réserver une aventure</a>
+                    <a href="http://dev.bureau401.fr/front-resa/#/reservation/" class="page-scroll btn btn-default btn-xl sr-button">Réserver une aventure</a>
                 </div>
             </div>
         </div>
@@ -340,25 +358,25 @@
                     <p>Climatisation naturelle de toutes les salles</p>
                     <p>Profitez de votre visite pour découvrir l'architecture exceptionnelle du Fort Lachaux ! Découvrez la caponnière double et contemplez la vue du belvédère</p>
 
-                    <a href="message.html" class="page-scroll btn btn-default btn-xl sr-button">Réserver une aventure</a>
+                    <a href="http://dev.bureau401.fr/front-resa/#/reservation/" class="page-scroll btn btn-default btn-xl sr-button">Réserver une aventure</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="no-padding" id="portfolio" style ="background-color:black">
-        <div class="container" >
-            <div class="row no-gutter" >
+    <section class="no-padding" id="portfolio" style="background-color:black">
+        <div class="container">
+            <div class="row no-gutter">
                 <div class="col-lg-4 col-sm-4">
                     <img src="img/entree_tunnel.jpg" class="img-responsive" alt="">
-                </div>                             
+                </div>
                 <div class="col-lg-4 col-sm-4">
                     <img src="img/bout_tunnel.jpg" class="img-responsive" alt="">
-                </div>                             
+                </div>
                 <div class="col-lg-4 col-sm-4">
                     <img src="img/entree.jpg" class="img-responsive" alt="">
-                </div>                             
-                             
+                </div>
+
             </div>
         </div>
     </section>
@@ -437,8 +455,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
     <script src="dist/scrollreveal/scrollreveal.min.js"></script>
     <script src="dist/js/bureau401.min.js"></script>
-    
-   
+
+
 
 </body>
 

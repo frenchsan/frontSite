@@ -219,7 +219,8 @@ aside {
   }
 }
 header {
-  position: relative;
+  display: block;
+ 
   width: 100%;
   min-height: auto;
   -webkit-background-size: cover;

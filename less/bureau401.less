@@ -405,14 +405,21 @@ header {
     .button-variant(white;@theme-primary;@theme-primary);
 }
 
-.btn {
+.commonbtn{
     .sans-serif-font;
     border: none;
     border-radius: 0px;
-    font-weight: 700;
     text-transform: uppercase;
 }
 
+.btn {
+    .commonbtn;    
+    font-weight: 700;    
+}
+.btndark{
+    .commonbtn;    
+    font-weight: 400;   
+}
 .btn-xl {
     padding: 15px 30px;
 }

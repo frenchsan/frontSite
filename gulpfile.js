@@ -112,3 +112,4 @@ function copytoDist(cb) {
 watch('less/*.*', series(clean,parallel(compileLessBootstrap,compileLessApplication,copyScrollreveal,copyFontAwesome),imageminifier,cleancss,minifyJs,minifyJsobserver,copyBootstrapJs, minifyCss,minifyHtml, copytoDist));
 //exports.build = series(clean, compileLess, minifyCss, copytoDist);
 exports.default = series(clean,parallel(compileLessBootstrap,compileLessApplication,copyScrollreveal,copyFontAwesome),imageminifier,cleancss,minifyJs,minifyJsobserver,copyBootstrapJs, minifyCss, minifyHtml,copytoDist);
+exports.dev = series(clean,parallel(compileLessBootstrap,compileLessApplication,copyScrollreveal,copyFontAwesome),cleancss,minifyJs,minifyJsobserver,copyBootstrapJs, minifyCss, minifyHtml,copytoDist);

@@ -8,6 +8,7 @@
     var del = require('del'); 
     const terser = require('gulp-terser');
     const htmlmin = require('gulp-htmlmin');
+    const imagemin = require('gulp-imagemin');
 
 function clean() {
     return del(['dist/*.*','css']);
@@ -92,12 +93,22 @@ function cleancss() {
 
 }
 
+function imageminifier(){
+
+    return src('img/*')
+        .pipe(imagemin())
+        .pipe(dest('dist/img'))
+}
+
+
+
+
 
 function copytoDist(cb) {
   // body omitted
   cb();
 }
 
-watch('less/*.*', series(clean,parallel(compileLessBootstrap,compileLessApplication,copyScrollreveal,copyFontAwesome),cleancss,minifyJs,minifyJsobserver,copyBootstrapJs, minifyCss,minifyHtml, copytoDist));
+watch('less/*.*', series(clean,parallel(compileLessBootstrap,compileLessApplication,copyScrollreveal,copyFontAwesome),imageminifier,cleancss,minifyJs,minifyJsobserver,copyBootstrapJs, minifyCss,minifyHtml, copytoDist));
 //exports.build = series(clean, compileLess, minifyCss, copytoDist);
-exports.default = series(clean,parallel(compileLessBootstrap,compileLessApplication,copyScrollreveal,copyFontAwesome),cleancss,minifyJs,minifyJsobserver,copyBootstrapJs, minifyCss, minifyHtml,copytoDist);
+exports.default = series(clean,parallel(compileLessBootstrap,compileLessApplication,copyScrollreveal,copyFontAwesome),imageminifier,cleancss,minifyJs,minifyJsobserver,copyBootstrapJs, minifyCss, minifyHtml,copytoDist);

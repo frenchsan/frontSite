@@ -57,6 +57,11 @@ function copyScrollreveal(){
      return src(['node_modules/scrollreveal/dist/*.js'])
             .pipe(dest('dist/scrollreveal'))
 }
+
+function copyJquery(){
+     return src(['node_modules/jquery/dist/jquery.min.js'])
+            .pipe(dest('dist/jquery'))
+}
 function copyFontAwesome() {
   return src(['node_modules/font-awesome/**',
   '!node_modules/font-awesome/**/*.map',
@@ -109,8 +114,8 @@ function copytoDist(cb) {
   cb();
 }
 
-watch('less/*.*', series(clean,parallel(compileLessBootstrap,compileLessApplication,copyScrollreveal,copyFontAwesome),imageminifier,cleancss,minifyJs,minifyJsobserver,copyBootstrapJs, minifyCss,minifyHtml, copytoDist));
+watch('less/*.*', series(clean,parallel(compileLessBootstrap,compileLessApplication,copyJquery,copyScrollreveal,copyFontAwesome),imageminifier,cleancss,minifyJs,minifyJsobserver,copyBootstrapJs, minifyCss,minifyHtml, copytoDist));
 //exports.build = series(clean, compileLess, minifyCss, copytoDist);
-module.exports.default = series(clean,parallel(compileLessBootstrap,compileLessApplication,copyScrollreveal,copyFontAwesome),imageminifier,cleancss,minifyJs,minifyJsobserver,copyBootstrapJs, minifyCss, minifyHtml,copytoDist);
-module.exports.dev = series(clean,parallel(compileLessBootstrap,compileLessApplication,copyScrollreveal,copyFontAwesome),cleancss,minifyJs,minifyJsobserver,copyBootstrapJs, minifyCss, minifyHtml,copytoDist);
+module.exports.default = series(clean,parallel(compileLessBootstrap,compileLessApplication,copyJquery,copyScrollreveal,copyFontAwesome),imageminifier,cleancss,minifyJs,minifyJsobserver,copyBootstrapJs, minifyCss, minifyHtml,copytoDist);
+module.exports.dev = series(clean,parallel(compileLessBootstrap,compileLessApplication,copyJquery,copyScrollreveal,copyFontAwesome),cleancss,minifyJs,minifyJsobserver,copyBootstrapJs, minifyCss, minifyHtml,copytoDist);
 

@@ -27,7 +27,7 @@
     "scrollreveal": "^3.4.0"
   },
   "dependencies": {
-    "bootstrap": "^3.3.7",
+    "bootstrap": "^3.4.1",
     "del": "^3.0.0",
     "gulp-htmlmin": "^5.0.1",
     "npx": "^10.2.0"
